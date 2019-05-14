@@ -24,5 +24,6 @@ urlpatterns = [
     path('base/', BaseView.as_view(),name='base'),
     path('home/', HomeView.as_view(), name='home'),
     path('contact/', ContactView.as_view(), name='contact'),
-path('food/', FoodView.as_view(), name='food'),
+    path('food/', FoodView.as_view(), name='food'),
+    path('festival/', FestivalView.as_view(), name='festival'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
