@@ -20,3 +20,24 @@ class HomeView(TemplateView):
         context['active'] = 'home'
 
         return context
+
+
+class FoodView(TemplateView):
+    template_name = 'food.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['active'] = 'food'
+
+        return context
+
+
+class ContactView(TemplateView):
+    template_name = 'contact.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['active'] = 'contact'
+
+        return context
+
