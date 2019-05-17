@@ -86,4 +86,12 @@ def foodView(request):
 
 def festivalView(request):
     festival = Festival.objects.all()
+    page = request.GET.get('page', 1)
+    paginator = Paginator(festival, 6)
+    try:
+        festival = paginator.page(page)
+    except PageNotAnInteger:
+        festival = paginator.page(1)
+    except EmptyPage:
+        festival = paginator.page(paginator.num_pages)
     return render(request, 'festival.html' , {'festival' : festival})
