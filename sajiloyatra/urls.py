@@ -16,14 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from yatraapp.views import *
+from yatraapp import views
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('base/', BaseView.as_view(),name='base'),
-    path('home/', HomeView.as_view(), name='home'),
-    path('contact/', ContactView.as_view(), name='contact'),
-    path('food/', FoodView.as_view(), name='food'),
-    path('festival/', FestivalView.as_view(), name='festival'),
+    # path('base/', BaseView.as_view(),name='base'),
+    # path('home/', HomeView.as_view(), name='home'),
+    # path('contact/', ContactView.as_view(), name='contact'),
+    path('food/', views.foodView, name='food'),
+    path('festival/', views.festivalView, name='festival'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

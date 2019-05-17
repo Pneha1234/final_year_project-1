@@ -27,79 +27,88 @@
         <div class="row">
           <div class="col-lg-8">
             <div class="row">
+              {% for foodItem in food %}
               <div class="col-md-6 col-lg-6 mb-4 ftco-animate">
-                <a href="#" class="block-5" > <img src="{% static 'images/jerry.jpg' %}">
+                <a href="#" class="block-5" > <img src="{{ foodItem.food_image_url }}">
                   <div class="text">
-                    <span class="price">Lagankhel</span>
-                    <h3 class="heading">Jerry</h3>
+                    <span class="price">{{ foodItem.location }}</span>
+                    <h3 class="heading">{{ foodItem.food_name }} </h3>
                     <div class="post-meta">
-                      <span>a sweet snack</span>
+                      <span>{{ foodItem.description }}</span>
                     </div>
                     <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
                   </div>
                 </a>
               </div>
-              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">
-                <a href="#" class="block-5">  <img src="{% static 'images/chanandda.PNG' %}" style="width:400px; height:400px;">
-                  <div class="text">
-                    <span class="price">Basantapur</span>
-                    <h3 class="heading">Chana Anda</h3>
-                    <div class="post-meta">
-                      <span>fried chickpeas and boiled egg</span>
-                    </div>
-                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">
-                <a href="#" class="block-5" >  <img src="{% static 'images/chiya.PNG' %}" style="width:400px; height:400px;">
-                  <div class="text">
-                    <span class="price">Chiyaghar</span>
-                    <h3 class="heading">Chiya</h3>
-                    <div class="post-meta">
-                      <span>Flavoured tea</span>
-                    </div>
-                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">
-                <a href="#" class="block-5" >  <img src="{% static 'images/lakhamari.PNG' %}" style="width:400px; height:400px;">
-                  <div class="text">
-                    <span class="price">Patan Durbar Square</span>
-                    <h3 class="heading">Lakhamari</h3>
-                    <div class="post-meta">
-                      <span>type of sweet</span>
-                    </div>
-                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-                  </div>
-                </a>
-              </div>
+              {% endfor %}
 
-              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">
-                <a href="#" class="block-5" > <img src="{% static 'images/machha.PNG' %}" style="width:400px; height:400px;">
-                  <div class="text">
-                    <span class="price">Malekhu</span>
-                    <h3 class="heading">Machha</h3>
-                    <div class="post-meta">
-                      <span>Variesties of fish as snacks</span>
-                    </div>
-                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">
-                <a href="#" class="block-5" > <img src="{% static 'images/nimki.PNG' %}" style="width:400px; height:400px;">
-                  <div class="text">
-                    <span class="price">Newroad</span>
-                    <h3 class="heading">Nimki</h3>
-                    <div class="post-meta">
-                      <span>crispy flour snack</span>
-                    </div>
-                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-                  </div>
-                </a>
-              </div>
+
+
+<!--              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">-->
+<!--                <a href="#" class="block-5">  <img src="{% static 'images/chanandda.PNG' %}" style="width:400px; height:400px;">-->
+<!--                  <div class="text">-->
+<!--                    <span class="price">Basantapur</span>-->
+<!--                    <h3 class="heading">Chana Anda</h3>-->
+<!--                    <div class="post-meta">-->
+<!--                      <span>fried chickpeas and boiled egg</span>-->
+<!--                    </div>-->
+<!--                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>-->
+<!--                  </div>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              -->
+<!--              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">-->
+<!--                <a href="#" class="block-5" >  <img src="{% static 'images/chiya.PNG' %}" style="width:400px; height:400px;">-->
+<!--                  <div class="text">-->
+<!--                    <span class="price">Chiyaghar</span>-->
+<!--                    <h3 class="heading">Chiya</h3>-->
+<!--                    <div class="post-meta">-->
+<!--                      <span>Flavoured tea</span>-->
+<!--                    </div>-->
+<!--                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>-->
+<!--                  </div>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              -->
+<!--              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">-->
+<!--                <a href="#" class="block-5" >  <img src="{% static 'images/lakhamari.PNG' %}" style="width:400px; height:400px;">-->
+<!--                  <div class="text">-->
+<!--                    <span class="price">Patan Durbar Square</span>-->
+<!--                    <h3 class="heading">Lakhamari</h3>-->
+<!--                    <div class="post-meta">-->
+<!--                      <span>type of sweet</span>-->
+<!--                    </div>-->
+<!--                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>-->
+<!--                  </div>-->
+<!--                </a>-->
+<!--              </div>-->
+
+<!--              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">-->
+<!--                <a href="#" class="block-5" > <img src="{% static 'images/machha.PNG' %}" style="width:400px; height:400px;">-->
+<!--                  <div class="text">-->
+<!--                    <span class="price">Malekhu</span>-->
+<!--                    <h3 class="heading">Machha</h3>-->
+<!--                    <div class="post-meta">-->
+<!--                      <span>Variesties of fish as snacks</span>-->
+<!--                    </div>-->
+<!--                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>-->
+<!--                  </div>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              -->
+<!--              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">-->
+<!--                <a href="#" class="block-5" > <img src="{% static 'images/nimki.PNG' %}" style="width:400px; height:400px;">-->
+<!--                  <div class="text">-->
+<!--                    <span class="price">Newroad</span>-->
+<!--                    <h3 class="heading">Nimki</h3>-->
+<!--                    <div class="post-meta">-->
+<!--                      <span>crispy flour snack</span>-->
+<!--                    </div>-->
+<!--                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>-->
+<!--                  </div>-->
+<!--                </a>-->
+<!--              </div>-->
+
             </div>
             <div class="row mt-5">
               <div class="col text-center">

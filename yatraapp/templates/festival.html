@@ -30,87 +30,90 @@
         <div class="row">
           <div class="col-lg-8">
             <div class="row">
+              {% for festivalItem in festival %}
               <div class="col-md-6 col-lg-6 mb-4 ftco-animate">
                 <a href="#" class="block-5">
-                	<img src="{% static 'images/Dashain.jpg' %}" >
+                	<img src="{{ festivalItem.festival_image_url }}" >
                   <div class="text">
-                   <span class="price">All over Nepal</span>
-                   <h3 class="heading">Dashain</h3>
+                   <span class="price">{{ festivalItem.location}}</span>
+                   <h3 class="heading">{{ festivalItem.festival_name}}</h3>
                     <div class="post-meta">
-                      <span>Dashain is the celebration of “the triumph of good over evil,”</span>
+                      <span>{{ festivalItem.description}}</span>
 
                     </div>
                     <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
                   </div>
                 </a>
               </div>
-              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">
-                <a href="#" class="block-5">
-                	<img src="{% static 'images/tihar1.jpg' %}">
+              {% endfor %}
+<!--            -->
+<!--              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">-->
+<!--                <a href="#" class="block-5">-->
+<!--                	<img src="{% static 'images/tihar1.jpg' %}">-->
 
-                  <div class="text">
-               		<span class="price">All over Nepal</span>
-                    <h3 class="heading">Tihar</h3>
-                    <div class="post-meta">
-                      <span>Tihar is the festivals of lights</span>
-                    </div>
-                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">
-                <a href="#" class="block-5">
-                	<img src="{% static 'images/Bisket.jpg' %}">
-                  <div class="text">
-                    <span class="price">Bhaktapur</span>
-                    <h3 class="heading">Bisket Jatra</h3>
-                    <div class="post-meta">
-                      <span>celebrates the start of the new year on the Bikram Sambat calendar </span>
-                    </div>
-                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">
-                <a href="#" class="block-5">
-                	<img src="{% static 'images/krishna.jpg' %}">
-                  <div class="text">
-                    <span class="price">Patan</span>
-                    <h3 class="heading">Krishna Janmastami</h3>
-                    <div class="post-meta">
-                      <span>Celebrates the birth of Krishna, the eighth avatar of Vishnu.</span>
-                    </div>
-                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">
-                <a href="#" class="block-5">
-                	<img src="{% static 'images/janki.jpg' %}">
-                  <div class="text">
-                    <span class="price">Janakpur</span>
-                    <h3 class="heading">Janaki Navmi</h3>
-                    <div class="post-meta">
-                      <span>Celebrates the birth of goddess Sita</span>
-                    </div>
-                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">
-                <a href="#" class="block-5">
-                	<img src="{% static 'images/holi2.jpg' %}">
-                  <div class="text">
-                    <span class="price">All over Nepal</span>
-                    <h3 class="heading">Holi</h3>
-                    <div class="post-meta">
-                      <span>Festival of colors</span>
-                    </div>
-                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-                  </div>
-                </a>
-              </div>
-              
+<!--                  <div class="text">-->
+<!--               		<span class="price">All over Nepal</span>-->
+<!--                    <h3 class="heading">Tihar</h3>-->
+<!--                    <div class="post-meta">-->
+<!--                      <span>Tihar is the festivals of lights</span>-->
+<!--                    </div>-->
+<!--                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>-->
+<!--                  </div>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">-->
+<!--                <a href="#" class="block-5">-->
+<!--                	<img src="{% static 'images/Bisket.jpg' %}">-->
+<!--                  <div class="text">-->
+<!--                    <span class="price">Bhaktapur</span>-->
+<!--                    <h3 class="heading">Bisket Jatra</h3>-->
+<!--                    <div class="post-meta">-->
+<!--                      <span>celebrates the start of the new year on the Bikram Sambat calendar </span>-->
+<!--                    </div>-->
+<!--                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>-->
+<!--                  </div>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">-->
+<!--                <a href="#" class="block-5">-->
+<!--                	<img src="{% static 'images/krishna.jpg' %}">-->
+<!--                  <div class="text">-->
+<!--                    <span class="price">Patan</span>-->
+<!--                    <h3 class="heading">Krishna Janmastami</h3>-->
+<!--                    <div class="post-meta">-->
+<!--                      <span>Celebrates the birth of Krishna, the eighth avatar of Vishnu.</span>-->
+<!--                    </div>-->
+<!--                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>-->
+<!--                  </div>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">-->
+<!--                <a href="#" class="block-5">-->
+<!--                	<img src="{% static 'images/janki.jpg' %}">-->
+<!--                  <div class="text">-->
+<!--                    <span class="price">Janakpur</span>-->
+<!--                    <h3 class="heading">Janaki Navmi</h3>-->
+<!--                    <div class="post-meta">-->
+<!--                      <span>Celebrates the birth of goddess Sita</span>-->
+<!--                    </div>-->
+<!--                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>-->
+<!--                  </div>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">-->
+<!--                <a href="#" class="block-5">-->
+<!--                	<img src="{% static 'images/holi2.jpg' %}">-->
+<!--                  <div class="text">-->
+<!--                    <span class="price">All over Nepal</span>-->
+<!--                    <h3 class="heading">Holi</h3>-->
+<!--                    <div class="post-meta">-->
+<!--                      <span>Festival of colors</span>-->
+<!--                    </div>-->
+<!--                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>-->
+<!--                  </div>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              -->
               
             </div>
             <div class="row mt-5">
