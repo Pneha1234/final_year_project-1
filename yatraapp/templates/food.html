@@ -44,6 +44,8 @@
 
 
 
+
+
 <!--              <div class="col-md-6 col-lg-6 mb-4 ftco-animate">-->
 <!--                <a href="#" class="block-5">  <img src="{% static 'images/chanandda.PNG' %}" style="width:400px; height:400px;">-->
 <!--                  <div class="text">-->
@@ -113,7 +115,28 @@
             <div class="row mt-5">
               <div class="col text-center">
                 <div class="block-27">
-                  <ul>
+                  {% if food.has_other_pages %}
+                    <ul class="pagination">
+                  {% if food.has_previous %}
+                    <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+                  {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                  {% endif %}
+                  {% for i in food.paginator.page_range %}
+                    {% if food.number == i %}
+                      <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                      <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                  {% if food.has_next %}
+                    <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+                  {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                  {% endif %}
+                </ul>
+                  {% endif %}
+              <!--    <ul>
                     <li><a href="#">&lt;</a></li>
                     <li class="active"><span>1</span></li>
                     <li><a href="#">2</a></li>
@@ -121,7 +144,7 @@
                     <li><a href="#">4</a></li>
                     <li><a href="#">5</a></li>
                     <li><a href="#">&gt;</a></li>
-                  </ul>
+                  </ul> -->
                 </div>
               </div>
             </div>

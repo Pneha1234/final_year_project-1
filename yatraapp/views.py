@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 from django.template import loader
 from .models import Food, Festival
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 # class BaseView(TemplateView):
@@ -72,7 +73,16 @@ from .models import Food, Festival
 
 def foodView(request):
     food = Food.objects.all()
+    page = request.GET.get('page', 1)
+    paginator = Paginator(food, 6)
+    try:
+        food = paginator.page(page)
+    except PageNotAnInteger:
+        food = paginator.page(1)
+    except EmptyPage:
+        food = paginator.page(paginator.num_pages)
     return render(request, 'food.html', {'food':food})
+
 
 def festivalView(request):
     festival = Festival.objects.all()
